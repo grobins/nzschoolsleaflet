@@ -1,8 +1,8 @@
 tasks
 
 basic leaflet map (/)
-add lat/lon from csv
-add school name
+add lat/lon from csv (/)
+add school name (/)
 limit data 
 build pie from records on row
 add pie marker
