@@ -20,7 +20,7 @@ var createMap = function(){
   }).addTo(map);
 
 
-  for (var i = 0; i < myArray.length; i++) {
+ for (var i = 0; i < myArray.length; i++) {
    marker = new L.marker([myArray[i][0],myArray[i][1]])
     // .bindPopup(planes[i][0])
     .addTo(map);
@@ -30,24 +30,37 @@ var createMap = function(){
 // console.log(schools.length)
 addGeoJSONToMap = function(object){
 
-  
+
 }
 
 
 $.ajax({
-    type: "GET",
-    url: 'data/schools.geojson',
-    dataType: 'json',
-    success: function (response) {
-      console.log(response)
-      
-        geojsonLayer = L.geoJson(response).addTo(map);
-        map.fitBounds(geojsonLayer.getBounds());
-    },
-    error: function (request, status, error) {
+  type: "GET",
+  url: 'data/schools.geojson',
+  dataType: 'json',
+  success: function (response) {
+    console.log(response)
+        // too slow!
+        // geojsonLayer = L.geoJson(response).addTo(map);
+        // map.fitBounds(geojsonLayer.getBounds());
+        var pointsArray = []  
+        for (i = 0; i < response.length; i++){
+          // debugger
+          var point = [response[i].geometry.coordinates[1],response[i].geometry.coordinates[0]];
+          var label = response[i].properties.Name;
+          marker = new L.marker(point).addTo(map).bindPopup(label);
+          pointsArray.push(point);
+        }
+
+        var bounds = new L.LatLngBounds(pointsArray);
+        map.fitBounds(bounds);
+
+
+      },
+      error: function (request, status, error) {
         debugger;
-    }
-});
+      }
+    });
 
 
 
@@ -66,14 +79,14 @@ $.ajax({
 
 
 var buildMap = function(){
-  
+
   if(typeof map !== 'undefined'){  
-   
+
     destroyMap();
     createMap();
     
   } else {
-   
+
    createMap()
    
  }
