@@ -1,2 +1,1 @@
-"# nzschoolsleaflet" 
-"# nzschoolsleaflet" 
+"map of New Zealand Schools" 
