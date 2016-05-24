@@ -1,0 +1,48 @@
+
+var destroyMap = function(){
+// if (typeof(map) !== 'undefined'){
+    map.remove()
+    console.log('map: destroyed');
+// }
+}
+
+var createMap = function(){
+     map = L.map('mymap');    
+     var bounds = new L.LatLngBounds(myArray);
+      map.fitBounds(bounds);
+      mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+      L.tileLayer(
+          'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; ' + mapLink + ' Contributors',
+              maxZoom: 18,
+          }).addTo(map);
+
+     var heat = L.heatLayer(myArray, {
+         radius: 10,
+         blur: 5,
+         minOpacity: 0.
+     }).addTo(map);
+    
+        console.log('map: created');
+ } 
+    
+
+
+
+var buildMap = function(){
+    
+ 	if(typeof map !== 'undefined'){  
+     
+        destroyMap();
+     	createMap();
+        
+    } else {
+     
+     createMap()
+        
+    }
+    
+    
+}
+
+buildMap()

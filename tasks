@@ -1,0 +1,11 @@
+tasks
+
+basic leaflet map (/)
+add lat/lon from csv
+add school name
+limit data 
+build pie from records on row
+add pie marker
+add address search
+add catchment areas - if data available
+add all features as options - crossfilter
