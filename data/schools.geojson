@@ -1,4 +1,7 @@
-[
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
 { "type": "Feature", "id": 1, "properties": { "Name": "Te Kao School", "Decile": 2, "Total School Roll": 34, "European\/ Pakeha": 0, "Maori": 34, "Pasifika": 0, "Asian": 0, "MELAA": 0, "Other": 0, "International Students": 0 }, "geometry": { "type": "Point", "coordinates": [ 172.965948, -34.654712 ] } },
 { "type": "Feature", "id": 2, "properties": { "Name": "Taipa Area School", "Decile": 2, "Total School Roll": 257, "European\/ Pakeha": 40, "Maori": 198, "Pasifika": 13, "Asian": 4, "MELAA": 1, "Other": 1, "International Students": 0 }, "geometry": { "type": "Point", "coordinates": [ 173.464302, -34.994709 ] } },
 { "type": "Feature", "id": 3, "properties": { "Name": "Kaitaia College", "Decile": 2, "Total School Roll": 923, "European\/ Pakeha": 231, "Maori": 655, "Pasifika": 18, "Asian": 16, "MELAA": 0, "Other": 3, "International Students": 0 }, "geometry": { "type": "Point", "coordinates": [ 173.2587, -35.121322 ] } },
@@ -2393,3 +2396,4 @@
 { "type": "Feature", "id": 2392, "properties": { "Name": "Clearview Primary", "Decile": 10, "Total School Roll": 715, "European\/ Pakeha": 607, "Maori": 61, "Pasifika": 11, "Asian": 26, "MELAA": 5, "Other": 5, "International Students": 0 }, "geometry": { "type": "Point", "coordinates": [ 172.38121, -43.606108 ] } },
 { "type": "Feature", "id": 2393, "properties": { "Name": "Kauri Flats School (Proposed open date: 30 Jan 2017 )", "Decile": null, "Total School Roll": null, "European\/ Pakeha": null, "Maori": null, "Pasifika": null, "Asian": null, "MELAA": null, "Other": null, "International Students": null }, "geometry": { "type": "Point", "coordinates": [ 174.949754, -37.0442 ] } }
 ]
+}

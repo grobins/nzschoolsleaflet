@@ -2,96 +2,109 @@
 var myArray = [[-36.722090134845, 174.706185486179],[-36.7225889145021, 174.70681697374],[-36.7226684799392, 174.707041953529],[-36.7239217484465, 174.706927503798],[-36.7223489353841, 174.705472743403],[-36.7219361753662, 174.706965870309],[-36.7221847568211, 174.706584230945],[-36.722459717188, 174.705479655158],[-36.7220776452447, 174.70621894236],[-36.724074547633, 174.706362671077],[-36.7236307120072, 174.707822906166],[-36.7221460569371, 174.705999205476],[-36.7232271498858, 174.705694172773],[-36.722778386786, 174.706019217716],[-36.7217523559738, 174.706789978623],[-36.7227410219344, 174.706183609152],[-36.7220054489618, 174.705992525767],[-36.7235874547669, 174.706786327847],[-36.7215638040565, 174.70625733197],[-36.7231959360999, 174.707735816523],[-36.7219406133595, 174.706784139165],[-36.7223265086572, 174.706938926561],[-36.722260183304, 174.70794312888],[-36.7229893447234, 174.706695651445],[-36.722737598946, 174.706179957883],[-36.7230685109169, 174.707277196019],[-36.7230865863893, 174.707305553393],[-36.7222494830425, 174.706215244095],[-36.7221014470892, 174.706830727739],[-36.7221277757931, 174.706501516866],[-36.7221559117356, 174.705819930841],[-36.7218585226659, 174.70605783118],[-36.7220611780264, 174.706760325896],[-36.7234161775182, 174.706725486438],[-36.7223491181624, 174.707338299361],[-36.72226046757, 174.70636779573],[-36.7231664831984, 174.705832346264],[-36.7228123500387, 174.706790704933],[-36.7223776566513, 174.706327662409],[-36.7229834980651, 174.706381965676],[-36.722748318224, 174.705888153145],[-36.7226785537425, 174.706112390823],[-36.7225616734605, 174.70651085072],[-36.7226248132682, 174.706478804189],[-36.7219870781005, 174.706754339713],[-36.7231885654634, 174.706531706451],[-36.7217977884375, 174.705980046756],[-36.7229764115148, 174.706513405155],[-36.7216568787156, 174.706492577908],[-36.7220172691252, 174.705441819589],[-36.7226195625101, 174.707250150089],[-36.7219789731603, 174.706413347918],[-36.7220077315244, 174.70673847281],[-36.7239657120394, 174.706175429036],[-36.7227534296417, 174.705669236724],[-36.7236388176561, 174.707146674791],[-36.7223748140649, 174.706388301687],[-36.7231728252861, 174.70627143189],[-36.7227771093997, 174.706514775835],[-36.7216043635123, 174.706479079162],[-36.7212149419323, 174.706040393396],[-36.7227070801971, 174.706398126095],[-36.7230047507061, 174.70461531838],[-36.7227820246008, 174.706964761781],[-36.7218835743191, 174.7065769502],[-36.7224393011759, 174.706102562495],[-36.7227011132606, 174.706624674459],[-36.7234835821608, 174.707002856812],[-36.723785503875, 174.707089660805],[-36.7227677665855, 174.706525440459],[-36.7217697259835, 174.706286814889],[-36.7229832991423, 174.706871950468],[-36.7231991205383, 174.70611032206],[-36.7231531468778, 174.706830046553],[-36.7235615475628, 174.706863383629],[-36.7233231577849, 174.706016872421],[-36.7228439501812, 174.706698898677],[-36.7227193009091, 174.706392850502],[-36.7219841580532, 174.706736610939],[-36.7228919837722, 174.70571924323],[-36.7232471838436, 174.707096000929],[-36.7232664023819, 174.706163265046],[-36.7225153237597, 174.70559822352],[-36.7220345386941, 174.706397095912],[-36.7223533519363, 174.706963251548],[-36.7232462105684, 174.706285436612],[-36.7210801895193, 174.705013213496],[-36.7239510561135, 174.706595677262],[-36.7225493212253, 174.705879155306],[-36.7221796937687, 174.705984096312],[-36.7218115455942, 174.707389524849],[-36.7225930815468, 174.704655817163],[-36.7221842088273, 174.70559092784],[-36.7227461940427, 174.705904888536],[-36.7227579715268, 174.706648505482],[-36.7220704131327, 174.707493141051],[-36.7231272255665, 174.705780205374],[-36.7221511145398, 174.705959242904],[-36.7217685919995, 174.705976685584],[-36.7221953150024, 174.70563252806]];
 
 var destroyMap = function(){
-// if (typeof(map) !== 'undefined'){
   map.remove()
   console.log('map: destroyed');
-// }
 }
 
 var createMap = function(){
- map = L.map('mymap');    
- var bounds = new L.LatLngBounds(myArray);
- map.fitBounds(bounds);
- mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
- L.tileLayer(
-  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; ' + mapLink + ' Contributors',
-    maxZoom: 18,
-  }).addTo(map);
+ // map = L.map('mymap').setView([-36.722090134845, 174.706185486179], 10);;    
+ // // var bounds = new L.LatLngBounds(myArray);
+ // // map.fitBounds(bounds);
+ // mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+ // L.tileLayer(
+ //  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+ //    attribution: '&copy; ' + mapLink + ' Contributors',
+ //    maxZoom: 18,
+ //  }).addTo(map);
+ // getGeoJSON();
+
+var map = L.map('mymap').setView([28.23211669921875, -26.050065042385917], 10);
+//L.tileLayer('http://b.tilecloudmade.com/e7b61e61295a44a5b319ca0bd3150890/997/256/18/149531/108306.png', {
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â© <a href="http://cloudmade.com">CloudMade</a>',
+    maxZoom: 18
+}).addTo(map);
 
 
- for (var i = 0; i < myArray.length; i++) {
-   marker = new L.marker([myArray[i][0],myArray[i][1]])
-    // .bindPopup(planes[i][0])
-    .addTo(map);
-  }
 
 
-// console.log(schools.length)
-addGeoJSONToMap = function(object){
+
+
 
 
 }
 
+getGeoJSON = function(object){
+  $.ajax({
+    type: "GET",
+    url: 'data/schools.geojson',
+    dataType: 'json',
+    success: function (response) {
+      addGeoJSON(response);
+    },
+    error: function (request, status, error) {
+      console.log('There was an error');
+    }
+  });
 
-$.ajax({
-  type: "GET",
-  url: 'data/schools.geojson',
-  dataType: 'json',
-  success: function (response) {
-    console.log(response)
-        // too slow!
-        // geojsonLayer = L.geoJson(response).addTo(map);
-        // map.fitBounds(geojsonLayer.getBounds());
-        var pointsArray = []  
-        for (i = 0; i < response.length; i++){
-          // debugger
-          var point = [response[i].geometry.coordinates[1],response[i].geometry.coordinates[0]];
-          var label = response[i].properties.Name;
-          marker = new L.marker(point).addTo(map).bindPopup(label);
-          pointsArray.push(point);
-        }
-
-        var bounds = new L.LatLngBounds(pointsArray);
-        map.fitBounds(bounds);
+  console.log('map: created');
 
 
-      },
-      error: function (request, status, error) {
-        debugger;
-      }
-    });
-
-
-
-
-
- // var heat = L.heatLayer(myArray, {
- //   radius: 10,
- //   blur: 5,
- //   minOpacity: 0.
- // }).addTo(map);
- 
- console.log('map: created');
 } 
+
+addGeoJSON = function(response){
+    var geojsonMarkerOptions = {
+        radius: 8,
+        fillColor: "#ff7800",
+        color: "#000",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8
+    };
+
+    L.geoJson(response, {
+        pointToLayer: function (feature, latlng) {
+            return L.circleMarker(latlng, geojsonMarkerOptions);
+        }
+    }).addTo(map);
+
+}
+
+
+
+
+// // Bind a popup to each feature in hospitalLayer and libraryLayer
+//   hospitalLayer.eachLayer(function (layer) {
+//     layer.bindPopup('<strong>' + layer.feature.properties.Name + '</strong>', { closeButton: false });
+//   }).addTo(map);
+//   libraryLayer.eachLayer(function (layer) {
+//     layer.bindPopup(layer.feature.properties.Name, { closeButton: false });
+//   }).addTo(map);
+
+//   // Open popups on hover
+//   libraryLayer.on('mouseover', function (e) {
+//     e.layer.openPopup();
+//   });
+//   hospitalLayer.on('mouseover', function (e) {
+//     e.layer.openPopup();
+//   });
+
+
+
+
+
+
 
 
 
 
 var buildMap = function(){
-
   if(typeof map !== 'undefined'){  
-
     destroyMap();
     createMap();
-    
   } else {
-
-   createMap()
-   
+   createMap();
  }
- 
- 
 }
 
-buildMap()
+buildMap();
