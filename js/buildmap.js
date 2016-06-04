@@ -7,9 +7,9 @@ var myArray = [[-36.722090134845, 174.706185486179],[-36.7225889145021, 174.7068
     maxZoom: 18
   }).addTo(map);
 
-  map.on('click', function (e) { 
-    console.log('click ' + e.latlng); 
-  });
+  // map.on('click', function (e) { 
+  //   console.log('click ' + e.latlng); 
+  // });
 
 
 getGeoJSON = function(object){
@@ -55,7 +55,36 @@ var schoolsLayer = L.geoJson(geojsondata, {
     e.layer.openPopup();
   });
 
+
+//  Find Nearest school to map click.
+map.on('click', function (e) {
+  // Get the GeoJSON from libraryFeatures and hospitalFeatures
+  // var schoolFeatures = schoolsLayer.getGeoJSON();
+
+  var clickedMarker = turf.point([e.latlng.lng, e.latlng.lat]);
+  console.log(clickedMarker)
+
+    // var marker = new L.marker(e.latlng).addTo(map);
+
+
+  // Using Turf, find the nearest hospital to library clicked
+  var nearestSchool = turf.nearest(clickedMarker, geojsondata);
+  console.log(nearestSchool.properties.Name)
+
+});
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
